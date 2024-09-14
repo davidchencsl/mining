@@ -1,4 +1,5 @@
 export VERSION=3.0.3
+pkill aleominer
 chmod +x start.sh
 rm -rf *aleo*
 wget https://public-download-ase1.s3.ap-southeast-1.amazonaws.com/aleo-miner/aleominer+$VERSION.zip
