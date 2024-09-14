@@ -2,7 +2,7 @@
 
 set -x
 
-export VERSION=3.0.3
+VERSION=3.0.3
 pkill aleominer
 rm -rf *aleo*
 wget https://public-download-ase1.s3.ap-southeast-1.amazonaws.com/aleo-miner/aleominer+$VERSION.zip
