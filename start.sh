@@ -10,7 +10,7 @@ apt install unzip
 unzip -o aleominer+$VERSION.zip
 rm -rf aleominer+$VERSION.zip
 chmod +x /root/aleominer
-echo -e "env >> /etc/environment;\npkill start.sh ; rm -rf start.sh ; wget --no-http-keep-alive https://raw.githubusercontent.com/davidchencsl/mining/main/start.sh ; chmod +x start.sh ; nohup ./start.sh > /root/aleo.log 2>&1 &" > onstart.sh
+echo -e "env >> /etc/environment;\npkill start.sh ; rm -rf start.sh ; wget --no-http-keep-alive https://raw.githubusercontent.com/davidchencsl/mining/main/start.sh ; chmod +x start.sh ; nohup ./start.sh &" > onstart.sh
 while true
 do 
   /root/aleominer -u stratum+tcp://aleo-asia.f2pool.com:4400 -w davidchencsl.$(hostname)
