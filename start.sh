@@ -1,8 +1,9 @@
 export VERSION=3.0.3
+chmod +x start.sh
 rm -rf *aleo*
 wget https://public-download-ase1.s3.ap-southeast-1.amazonaws.com/aleo-miner/aleominer+$VERSION.zip
 apt install unzip
-unzip aleominer+$VERSION.zip
+unzip -o aleominer+$VERSION.zip
 rm -rf aleominer+$VERSION.zip
 chmod +x /root/aleominer
 echo -e "env >> /etc/environment;\n./start.sh;" > onstart.sh
