@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 export VERSION=3.0.3
 pkill aleominer
 rm -rf *aleo*
