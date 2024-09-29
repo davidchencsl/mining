@@ -10,7 +10,6 @@ tar -zxvf aleo_prover-$VERSION.tar.gz
 rm -rf aleo_prover-$VERSION.tar.gz
 chmod +x aleo_prover/aleo_prover
 cd aleo_prover
-while
-do 
+while true; do 
   ./aleo_prover --pool aleo.asia1.zk.work:10003 --pool aleo.hk.zk.work:10003 --pool aleo.jp.zk.work:10003 --address $ADDRESS --custom_name $(hostname)
 done                      
