@@ -2,7 +2,7 @@
 
 set -x
 
-VERSION=v0.2.3_lite
+VERSION=v0.2.3_full
 ADDRESS=aleo13q6dkky4re5r29ejm63cyjh7g7fwtyfczzpcu8004jjwfu6ayu8q2jt2ef
 RELEASE=$(cut -d'_' -f1 <<< $VERSION)
 wget https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/$RELEASE/aleo_prover-$VERSION.tar.gz
