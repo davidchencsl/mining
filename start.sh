@@ -2,16 +2,15 @@
 
 set -x
 
-VERSION=3.0.3
-pkill aleominer
-rm -rf *aleo*
-wget https://public-download-ase1.s3.ap-southeast-1.amazonaws.com/aleo-miner/aleominer+$VERSION.zip
-apt install unzip
-unzip -o aleominer+$VERSION.zip
-rm -rf aleominer+$VERSION.zip
-chmod +x /root/aleominer
-echo -e "env >> /etc/environment;\npkill start.sh ; rm -rf start.sh ; wget --no-http-keep-alive https://raw.githubusercontent.com/davidchencsl/mining/main/start.sh ; chmod +x start.sh ; nohup ./start.sh > /root/log 2>&1 &" > onstart.sh
-while true
+VERSION=v0.2.3_full
+ADDRESS=aleo13q6dkky4re5r29ejm63cyjh7g7fwtyfczzpcu8004jjwfu6ayu8q2jt2ef
+RELEASE=$(cut -d'_' -f1 <<< $VERSION)
+wget https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/$RELEASE/aleo_prover-$VERSION.tar.gz
+tar -zxvf aleo_prover-$VERSION.tar.gz
+rm -rf aleo_prover-$VERSION.tar.gz
+chmod +x aleo_prover/aleo_prover
+cd aleo_prover
+while
 do 
-  /root/aleominer -u stratum+tcp://aleo-asia.f2pool.com:4400 -w davidchencsl.$(hostname)
+  ./aleo_prover --pool aleo.asia1.zk.work:10003 --pool aleo.hk.zk.work:10003 --pool aleo.jp.zk.work:10003 --address $ADDRESS --custom_name $(hostname)
 done                      
